@@ -1,4 +1,4 @@
-#Mnml Tab
+# Mnml Tab
 
 A minimal new tab page for Google Chrome
 
