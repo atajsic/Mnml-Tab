@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>New Tab</title>
+    <link rel="stylesheet" href="mnml.css">
+  </head>
+  <body>
+    <div id="trash" class="trash"></div>
+    <div id="container" class="container"></div>
+    <div id="controls" class="controls">
+      <div id="add" class="add"></div>
+      <div id="save" class="save"></div>
+      <div id="cancel" class="cancel"></div>
+    </div>
+    <div id="options" class="options" style="display: none;">
+      Size: <span id="size_val"></span>
+      <input id="size" type="range" max="256" name="size">
+      Spacing: <span id="spacing_val"></span>
+      <input id="spacing" type="range" name="spacing">
+      Radius: <span id="radius_val"></span>
+      <input id="radius" type="range" max="50" name="radius">
+      Columns: <span id="columns_val"></span>
+      <input id="columns" min="1" type="range" min="1" max="20" name="columns">
+      Background:
+      <input id="background" type="text" name="background" placeholder="url">
+      <div class="loader">
+        <div id="import" class="import">Import</div>
+        <input type="file" id="importFile" accept=".json" style="display:none" />
+         | 
+        <div id="export" class="export">Export</div>
+        |
+        <div id="reset" class="reset">Reset</div>
+      </div>
+    </div>
+    <script src="js/Sortable.min.js"></script>
+    <script src="mnml.js"></script>
+  </body>
+</html>

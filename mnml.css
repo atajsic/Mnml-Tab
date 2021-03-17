@@ -1,0 +1,147 @@
+html{
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+body{
+  height: 100%; 
+  width: 100%; 
+  margin: 0; 
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: visible;
+}
+.app {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.edit .app{
+  cursor: grab;
+}
+.edit .app:hover .control{
+  opacity: 1;
+}
+.app>img{
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  transition: box-shadow 0.1s ease-in-out;
+}
+.app>img:hover{
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.6);
+}
+.options{
+  background: black;
+  opacity: 0.8;
+  color: white;
+  border-radius: 10px;
+  width: 250px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px;
+}
+.options input{
+  width: 100%;
+}
+.trash{
+  position: fixed;
+  background-color: black;
+  background-image: url("img/icons/trash.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 50%;
+  text-align: center;
+  display: none;
+  opacity: 0.6;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px;
+}
+.trash .app{
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8); 
+  margin: 0px !important;
+}
+.controls{
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  text-align: center;
+  font-size: 0;
+  display: none;
+}
+.controls>div{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.controls .add{
+  background-image: url("img/icons/plus-circle.svg");
+  background-color: #2188ff;
+}
+.controls .add:hover{
+  background-color: #0366d6;
+}
+.controls .save{
+  background-image: url("img/icons/check-circle.svg");
+  background-color: #34d058;
+}
+.controls .save:hover{
+  background-color: #28a745;
+}
+.controls .cancel{
+  background-image: url("img/icons/x-circle.svg");
+  background-color: #ea4a5a;
+}
+.controls .cancel:hover{
+  background-color: #d73a49;
+}
+.editor{
+  position: absolute;
+  width: 250px;
+  background: black;
+  opacity: 0.8;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  z-index: 1000;
+  top: 0;
+  margin-top: -85px;
+  cursor: default;
+}
+.editor:after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.editor input{
+  width: 100%;
+  margin: 5px 0;
+}
+.loader{
+  margin-top: 10px;
+  text-align: center;
+}
+.loader>div{
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+}
