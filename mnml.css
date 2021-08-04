@@ -11,6 +11,8 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  font-family: system-ui, sans-serif;
+  font-size: 75%;
 }
 .container{
   position: absolute;

@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Mnml Tab",
   "description": "A minimal new tab page",
   "version": "0.1",
@@ -10,5 +10,10 @@
   "icons": {
     "48": "img/48.png",
     "128": "img/128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mnml-tab@atajsic.me"
+    }
   }
 }
