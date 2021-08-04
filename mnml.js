@@ -106,12 +106,16 @@ function loadOptions() {
 
     //set current value to input
     i.value = settings[o]
-    s.innerHTML = settings[o]
+    s.innerHTML = ""
+    let nt = document.createTextNode(settings[o])
+    s.appendChild(nt)
 
     //setup listener
     i.oninput = function () {
       settings[o] = parseInt(this.value)
-      s.innerHTML = parseInt(this.value)
+      s.innerHTML = ""
+      let nt = document.createTextNode(parseInt(this.value))
+      s.appendChild(nt)
       drawApps()
     }
   })
