@@ -37,8 +37,8 @@ document.getElementById("cancel").addEventListener("click", cancelChanges)
 document.getElementById("export").addEventListener("click", exportSettings)
 document.getElementById("import").addEventListener("click", importSettings)
 document.getElementById("reset").addEventListener("click", resetSettings)
-window.addEventListener("popstate", init)
-window.addEventListener("focus", init)
+window.addEventListener("popstate", resetBg)
+window.addEventListener("focus", resetBg)
 
 //Let's go!
 init()
@@ -197,8 +197,11 @@ function getDefault(){
 }
 
 function drawBg(){
-  document.body.style.display = "inherit"
   document.body.style.backgroundImage = "url(\""+ settings.background + "\")"
+}
+
+function resetBg(){
+    document.body.style.display = "inherit"
 }
 
 function drawApps(){
