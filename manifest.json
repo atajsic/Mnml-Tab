@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Mnml Tab",
   "description": "A minimal new tab page",
-  "version": "0.1",
+  "version": "0.2",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
