@@ -346,7 +346,11 @@ function editApp() {
     inputIcon.onchange = function(){
       let app = this.parentNode.parentNode
       app.dataset.icon = this.value
-      app.querySelector("img").src = this.value
+      if (this.value == "") {
+        app.querySelector("img").src = "img/default.png"
+      } else {
+        app.querySelector("img").src = this.value
+      }
       settings.apps[app.dataset.index].icon = this.value
     }
     editor.appendChild(inputIcon)
