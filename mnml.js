@@ -339,7 +339,7 @@ function editApp() {
     editor.addEventListener("click", function(c){
       c.stopPropagation()
     })
-    editor.style.marginLeft = (-270/2) + (settings.size/2)
+    editor.style.marginLeft = (-270/2) + (settings.size/2) + "px"
 
     let inputIcon = document.createElement("input")
     inputIcon.value = this.dataset.icon

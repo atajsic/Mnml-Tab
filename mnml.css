@@ -137,6 +137,7 @@ body{
 .editor input{
   width: 100%;
   margin: 5px 0;
+  box-sizing: border-box;
 }
 .loader{
   margin-top: 10px;
