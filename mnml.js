@@ -218,7 +218,7 @@ function drawApps(){
   for (let i = 0; i < settings["apps"].length; i++) {
     a = settings["apps"][i]
     var icon = document.createElement("img")
-    icon.src = a.icon
+    icon.src = (a.icon == "") ? "img/default.png" : a.icon ;
 
     icon.style.borderRadius = settings.radius + "%"
     icon.style.width = settings.size + "px"
