@@ -81,10 +81,11 @@ function importSettings(){
 }
 
 function exportSettings(){
-  var url = 'data:application/json;base64,' + btoa(JSON.stringify(settings))
+  var json = JSON.stringify(settings)
+  var blob = new Blob([json], {type: "text/json;charset=utf-8"})
   chrome.downloads.download({
     filename: "mnmltab.json",
-    url: url,
+    url: URL.createObjectURL(blob),
     saveAs: true
   })
 }
