@@ -37,6 +37,8 @@ document.getElementById("cancel").addEventListener("click", cancelChanges)
 document.getElementById("export").addEventListener("click", exportSettings)
 document.getElementById("import").addEventListener("click", importSettings)
 document.getElementById("reset").addEventListener("click", resetSettings)
+window.addEventListener("popstate", init)
+window.addEventListener("focus", init)
 
 //Let's go!
 init()
@@ -127,12 +129,10 @@ function loadOptions() {
   bg.onchange = function () {
     if (this.value == "") {
       settings.background = getDefault().background
-      drawBg()
-    }
-    else {
+    } else {
       settings.background = this.value
-      drawBg()
     }
+    drawBg()
   }
 }
 
@@ -197,11 +197,12 @@ function getDefault(){
 }
 
 function drawBg(){
+  document.body.style.display = "inherit"
   document.body.style.backgroundImage = "url(\""+ settings.background + "\")"
 }
 
 function drawApps(){
-  container.innerHTML = "";
+  container.innerHTML = ""
 
   var combined = (settings.size + (settings.spacing * 2))
   var maxWidth = combined * settings.columns
@@ -219,7 +220,11 @@ function drawApps(){
   for (let i = 0; i < settings["apps"].length; i++) {
     a = settings["apps"][i]
     var icon = document.createElement("img")
-    icon.src = (a.icon == "") ? "img/default.png" : a.icon ;
+    if (a.icon == "") {
+      icon.src = "img/default.png"
+    } else {
+      icon.src = a.icon
+    }    
 
     icon.style.borderRadius = settings.radius + "%"
     icon.style.width = settings.size + "px"
@@ -251,9 +256,9 @@ function openURL(e) {
     }
     //otherwise current tab
     else {
-      document.body.remove()
+      document.body.style.display = "none"
       chrome.tabs.getCurrent(function (t) {
-        chrome.tabs.update(t.id, { url: u });
+        chrome.tabs.update(t.id, { url: u })
       })
     }
   }
